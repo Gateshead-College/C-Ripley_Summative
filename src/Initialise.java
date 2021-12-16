@@ -22,8 +22,8 @@ public class Initialise {
             FileWriter writer = new FileWriter(albumFile);
 
             for (Albums a : albums) {
-                writer.write( a.albumID + " , " + a.albumTitle + " , " + a.albumArtist
-                        + " , " + a.albumPrice + " , " + a.albumStock);
+                writer.write( a.albumID + "," + a.albumTitle + "," + a.albumArtist
+                        + "," + a.albumPrice + "," + a.albumStock);
                 writer.write("\n");
             }
             writer.close();
@@ -54,7 +54,7 @@ public class Initialise {
     private Albums getAlbumFromString(String albumString) {
         Albums a;
         String[] al = albumString.split(" , ");
-        a = new Albums(Integer.parseInt(al[0]), al[1], al[2], Double.parseDouble(al[3]), Integer.parseInt(al[4]));
+        a = new Albums(Integer.parseInt(al[0]), (al[1]), (al[2]), Double.parseDouble(al[3]), Integer.parseInt(al[4]));
         return a;
     }
 

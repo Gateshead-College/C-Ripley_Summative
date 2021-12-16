@@ -13,7 +13,6 @@ public class MainMenu {
             menu();
     }
 
-
     public void menu() {
         System.out.println("Please select an option from the list below:");
         System.out.println("1 - View our Products");
@@ -121,16 +120,15 @@ public class MainMenu {
         albums.add(new Albums(albumID, albumTitle, albumArtist, albumPrice, albumStock));
     }
 
-    private void exitApplication() {
-        Initialise.writeData(albums);
-        albums.clear();
-        exit = true;
-    }
-
     private void displayProducts() {
         for (Albums a : albums) {
             System.out.println("ID: " + a.albumID + " - title: " + a.albumTitle + " - artist: " + a.albumArtist
                     + " - price: " + a.albumPrice + " - Current Stock: " + a.albumStock);
         }
+    }
+    private void exitApplication() {
+        Initialise.writeData(albums);
+        albums.clear();
+        exit = true;
     }
 }
